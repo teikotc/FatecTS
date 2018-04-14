@@ -24,25 +24,41 @@ public class UC07CadastrarUsuario {
 	}
 	
 	@Test(expected = RuntimeException.class)
-	public void CT01UC06CadastrarUsuario_com_nome_invalido_branco(){
+	public void CT01UC07CadastrarUsuario_com_nome_invalido_branco(){
 		usuario.setNome("");
 	}
 	
 	@Test(expected = RuntimeException.class)
-	public void CT02UC06CadastrarUsuario_com_nome_invalido_null() {
+	public void CT02UC07CadastrarUsuario_com_nome_invalido_null() {
 		usuario.setNome(null);
 	}
 
 	@Test(expected = RuntimeException.class)
-	public void CT03UC06CadastrarUsuario_com_ra_invalido_branco(){
+	public void CT03UC07CadastrarUsuario_com_ra_invalido_branco(){
 		usuario.setRa("");
 	}
 	
 	@Test(expected = RuntimeException.class)
-	public void CT04UC06CadastrarUsuario_com_ra_invalido_null(){
+	public void CT04UC07CadastrarUsuario_com_ra_invalido_null(){
 		usuario.setRa(null);
 	}
-
-
+	
+	@Test
+	public void CT06UC07CadastrarUsuario_ComNomeValido(){
+		usuario.getNome();
+	}
+	
+	@Test
+	public void CT07UC07CadastrarUsuario_ComRaValido(){
+		usuario.getRa();
+	}
+	
+	@Test
+	public void CT05UC07CadastrarUsuario_validar_equals(){
+		Usuario resultadoEsperado = new Usuario();
+		resultadoEsperado.setRa("11111");
+		resultadoEsperado.setNome("Jose da Silva");
+		assertTrue(resultadoEsperado.equals(usuario));
+	}
 
 }

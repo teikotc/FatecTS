@@ -7,6 +7,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import br.emprestimo.dadosDeTeste.ObtemLivro;
 import br.emprestimo.modelo.Livro;
 
 public class UC06CadastrarLivro {
@@ -15,11 +16,15 @@ public class UC06CadastrarLivro {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		livro = new Livro();
-		livro.setIsbn("121212");
-		livro.setTitulo("Engenharia de Software");
-		livro.setAutor("Pressman");
+		livro = ObtemLivro.comDadosValidos();
+		livro = ObtemLivro.comDadosInvalidos_branco();
+		livro = ObtemLivro.comISBNInvalido_nulo();
+		
 	}
+
+
+	
+	
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
